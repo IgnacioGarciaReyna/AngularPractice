@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pokedex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="main-container">
+    <ng-container *ngFor="let pokemons of pokemonList">
+      <app-card-pokemon [pokemon]="pokemons"></app-card-pokemon>
+    </ng-container>
+  </div>
+</ion-content>

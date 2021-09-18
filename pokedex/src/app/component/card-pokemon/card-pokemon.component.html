@@ -1,0 +1,11 @@
+<div class="card" [style.background]="getColorPokemon()">
+  <p class="pokemon-name" >{{ pokemon.name }}</p>
+  <p class="pokemon-number">#{{ pokemon.id }}</p>
+  <section class="types">
+    <p *ngFor="let type of pokemon.types">
+      {{ type.type.name }}
+    </p>
+  </section>
+
+  <img [src]="pokemon.sprites.front_default" alt="">
+</div>
