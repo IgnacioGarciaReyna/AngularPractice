@@ -8,10 +8,15 @@ import { from } from 'rxjs';
   providedIn: 'root',
 })
 export class PokemonService {
+  private offset: number = 500;
+  private limit: number = 50;
+  
   constructor(private _http: HttpClient) {}
+  
+  getPokemons(page: number) {
 
-  getPokemons() {
-    let url = 'https://pokeapi.co/api/v2/pokemon-form/?offset=0&limit=50';
+    this.offset = page * 50;
+    let url = `https://pokeapi.co/api/v2/pokemon-form/?offset=${this.offset}&limit=${this.limit}`;
 
     return this._http.get<PokemonResponse>(url).pipe(
       map((response) => response.results),

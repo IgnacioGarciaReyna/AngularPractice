@@ -1,11 +1,19 @@
 <div class="card" [style.background]="getColorPokemon()">
-  <p class="pokemon-name" >{{ pokemon.name }}</p>
-  <p class="pokemon-number">#{{ pokemon.id }}</p>
-  <section class="types">
-    <p *ngFor="let type of pokemon.types">
-      {{ type.type.name }}
-    </p>
+  <section class="header">
+    <p class="pokemon-name ion-text-capitalize">{{ pokemon.name }}</p>
+    <p class="pokemon-number">#{{ pokemon.id }}</p>
   </section>
+  <section class="body">
+    <section class="types">
+      <p
+        [style.background]="getColorTypesPokemon(type)"
+        class="ion-text-capitalize"
+        *ngFor="let type of pokemon.types"
+      >
+        {{ type.type.name }}
+      </p>
+    </section>
 
-  <img [src]="pokemon.sprites.front_default" alt="">
+    <img [src]="pokemon.sprites.front_default" alt="" />
+  </section>
 </div>

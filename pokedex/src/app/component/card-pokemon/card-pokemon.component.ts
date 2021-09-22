@@ -19,4 +19,8 @@ export class CardPokemonComponent implements OnInit {
   public getColorPokemon() {
     return this._colorPokemonService.getColorPokemon(this.pokemon.types[0].type.name).color;
   }
+
+  public getColorTypesPokemon(typePokemon) {
+    return this._colorPokemonService.getColorByTag(typePokemon.type.name).color;
+  }
 }

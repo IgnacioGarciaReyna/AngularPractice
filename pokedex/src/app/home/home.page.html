@@ -7,9 +7,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="main-container">
-    <ng-container *ngFor="let pokemons of pokemonList">
-      <app-card-pokemon [pokemon]="pokemons"></app-card-pokemon>
-    </ng-container>
-  </div>
+  
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="6" size-sm="3" size-md="2" *ngFor="let pokemons of pokemonList">
+          <app-card-pokemon [pokemon]="pokemons"></app-card-pokemon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-infinite-scroll class="ion-text-center" threshold="50px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content class="ion-text-center" loadingSpinner="dots">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  
 </ion-content>
