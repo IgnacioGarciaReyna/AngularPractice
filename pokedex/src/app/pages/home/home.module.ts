@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { CardPokemonComponent } from '../component/card-pokemon/card-pokemon.component';
+import { CardPokemonComponent } from '../../component/card-pokemon/card-pokemon.component';
 
 
 @NgModule({

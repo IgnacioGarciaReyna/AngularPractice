@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { concatMap, map, mergeMap } from 'rxjs/operators';
+import { concatMap, delay, map, mergeMap } from 'rxjs/operators';
 import { PokemonResponse } from 'interfaces/services/pokemonResponse';
 import { from } from 'rxjs';
 
@@ -24,7 +24,8 @@ export class PokemonService {
         from(pokemonsList).pipe(
           concatMap((pokemon) => this._http.get(pokemon.url))
         )
-      )
+      ),
+      delay(1000)
     );
   }
 }
