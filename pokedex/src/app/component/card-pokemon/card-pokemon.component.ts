@@ -13,7 +13,7 @@ export class CardPokemonComponent implements OnInit {
   constructor(private _colorPokemonService: ColorsPokemonService) {}
 
   ngOnInit() {
-    console.log(this.pokemon);
+    // console.log(this.pokemon);
   }
 
   public getColorPokemon() {

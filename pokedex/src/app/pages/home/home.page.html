@@ -7,7 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  
+  <ion-searchbar [formControl]="searchPokemonInput" showCancelButton="never" placeholder="Busca por pokemon"></ion-searchbar>
+  <div class="alert-warning" *ngIf="error" role="alert">
+    <strong>Who is that Pokemon?</strong>
+  </div>
     <ion-grid>
       <ion-row>
         <ion-col size-xs="6" size-sm="3" size-md="2" *ngFor="let pokemons of pokemonList">
