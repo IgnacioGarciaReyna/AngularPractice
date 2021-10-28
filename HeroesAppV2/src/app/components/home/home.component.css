@@ -1,0 +1,7 @@
+.jumbotron {
+    background: rgba(204, 204, 204, 0.438);
+    height: 10vh;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
