@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { appRouting } from './app.routes';
+import { ViewHeroComponent } from './components/view-hero/view-hero.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     HeroesComponent,
+    AboutUsComponent,
+    ViewHeroComponent,
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    appRouting,
   ],
   providers: [],
   bootstrap: [AppComponent]
