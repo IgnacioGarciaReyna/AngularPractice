@@ -20,7 +20,7 @@ import { HeroesService } from 'src/app/services/heroes/heroes.service';
   styleUrls: ['./view-hero.component.css'],
 })
 export class ViewHeroComponent implements OnInit {
-  public heroesList: Iheroe[] = [];
+  public heroe: Iheroe | undefined = undefined;
   public loading: boolean = false;
 
   //Indicamos que _heroesService va a ser de tipo HeroesService, por lo tanto heredará todos sus metodos, como getAllHeroes, que creamos nosotros mismos
@@ -28,26 +28,32 @@ export class ViewHeroComponent implements OnInit {
     public _heroeService: HeroesService,
     private _activatedRoute: ActivatedRoute
   ) {
-    //El método getAllHeroes devuelve el observable get (que trae el array de heroes), por lo tanto podemos subscribirnos
-    this._heroeService
-      .getAllHeroes()
-      .pipe(tap({
-        next:() => (this.loading = true),
-      }),
-        delay(1000),
-        map((heroes) => {
-          let array: Iheroe[] | any = heroes;
-          const nombre: string =
-            this._activatedRoute.snapshot.params['nombreHeroe'];
-          return _heroeService.GetHeroe(array, nombre);
-        })
-      )
-      .subscribe({
-        next: (x) => {
-          this.heroesList = x;
-        },
-        complete: () => (this.loading = false),
-      });
+    let nombreHeroe: string =
+      this._activatedRoute.snapshot.params['nombreHeroe'];
+
+    this._heroeService.GetHeroe(nombreHeroe).subscribe({
+      next: (_heroe) => (this.heroe = _heroe!),
+    });
+
+    // this._heroeService
+    //   .getAllHeroes()
+    //   .pipe(tap({
+    //     next:() => (this.loading = true),
+    //   }),
+    //     delay(1000),
+    //     map((heroes) => {
+    //       let array: Iheroe[] | any = heroes;
+    //       const nombre: string =
+    //         this._activatedRoute.snapshot.params['nombreHeroe'];
+    //       return _heroeService.GetHeroe(array, nombre);
+    //     })
+    //   )
+    // .subscribe({
+    //   next: (x) => {
+    //     this.heroesList = x;
+    //   },
+    //   complete: () => (this.loading = false),
+    // });
   }
 
   // public DetailsHeroe: any;

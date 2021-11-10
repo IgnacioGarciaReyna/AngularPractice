@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { appRouting } from './app.routes';
 import { ViewHeroComponent } from './components/view-hero/view-hero.component';
+import { SearchHeroeComponent } from './components/search-heroe/search-heroe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { ViewHeroComponent } from './components/view-hero/view-hero.component';
     HeroesComponent,
     AboutUsComponent,
     ViewHeroComponent,
+    SearchHeroeComponent,
   ],
   imports: [
     MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     appRouting,
   ],
   providers: [],

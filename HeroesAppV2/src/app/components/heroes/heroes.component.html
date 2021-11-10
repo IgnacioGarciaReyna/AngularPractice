@@ -4,7 +4,7 @@
   </div>
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-2 fadeIn" *ngIf="!loading">
         <div class="col" *ngFor="let heroe of heroesList">
-          <div class="card h-100 cursor" [routerLink]="['/viewhero', heroe.nombre]">
+          <div class="card h-100 cursor" (click)="goToViewHeros(heroe.nombre)">
             <img [src]="heroe.img" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title">{{heroe.nombre}}</h2>

@@ -1,0 +1,18 @@
+<div class="mt-2">
+    <div class="loading" *ngIf="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4 mt-2 fadeIn" *ngIf="!loading">
+          <div class="col" *ngFor="let heroe of heroeList">
+            <div class="card h-100 cursor">
+              <img [src]="heroe.img" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h2 class="card-title">{{heroe.nombre}}</h2>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Fecha de aparición: {{heroe.aparicion}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
