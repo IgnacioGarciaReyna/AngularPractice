@@ -1,46 +1,52 @@
-
 <div class="contenedor">
-    <div class="fondo-home">
-            <p class="tittle-home">NUNCA DEJES</p> 
-            <p class="tittle-home">DE SER ORIGINAL</p> 
-            <p class="subtittle-home">DESCUBRE NUESTRAS NOVEDADES</p>
-            <button class="button-home">COMPRAR</button>
+  <div class="fondo-home">
+    <p class="tittle-home">NUNCA DEJES</p>
+    <p class="tittle-home">DE SER ORIGINAL</p>
+    <p class="subtittle-home">DESCUBRE NUESTRAS NOVEDADES</p>
+    <button class="button-home">COMPRAR</button>
+  </div>
+  <div class="tienda">
+    <div class="contenedor-tittle-tienda">
+      <p class="tittle-tienda">COLECCIÓN DE EDICIÓN LIMITADA</p>
     </div>
-    <div class="tienda">
-        <p class="tittle-tienda">COLECCIÓN DE EDICIÓN LIMITADA</p>
-        <div class="contenedor-cards">
-            <div class="card-gorra">
-                <div class="img-card"></div>
-                <p>Soy un producto</p>
-                <p>$25</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="card-gorra">
-                <div class="img-card"></div>
-                <p>Soy un producto</p>
-                <p>$25</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="card-gorra">
-                <div class="img-card"></div>
-                <p>Soy un producto</p>
-                <p>$25</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="card-gorra">
-                <div class="img-card"></div>
-                <p>Soy un producto</p>
-                <p>$25</p>
-                <button>Agregar al Carrito</button>
-            </div>
-            <div class="card-gorra">
-                <div class="img-card"></div>
-                <p>Soy un producto</p>
-                <p>$25</p>
-                <button>Agregar al Carrito</button>
-            </div>
-
+    <div class="contenedor-cards">
+      <div class="card-gorra" *ngFor="let gorra of gorrasList">
+        <img [src]="gorra.img.lado" class="img-card">
+        <div class="contenedor-info-card">
+          <p class="name-card">{{ gorra.nombre }}</p>
+          <p>{{ gorra.precio }}</p>
         </div>
+        <button class="button-card">Agregar al Carrito</button>
+      </div>
     </div>
+    <div class="contenedor-vertodo">
+      <button class="button-home">Ver todo</button>
+    </div>
+  </div>
+  <div class="contenedor-instagram">
+    <div class="instagram">
+        <div class="contenedor-tittle-instagram">
+          <p class="tittle-tienda">#INSTAGRAM</p>
+        </div>
+        <div class="cont-img-inst">
+          <div class="cont-img-s">
+            <img class="img-instagram" src="./../../../assets/img/Instagram/01.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/02.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/03.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/04.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/05.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/06.jpg" alt="" />
+          </div>
+          <div class="cont-img-s">
+            <img class="img-instagram" src="./../../../assets/img/Instagram/07.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/08.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/09.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/10.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/11.jpg" alt="" />
+            <img class="img-instagram" src="./../../../assets/img/Instagram/12.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+  </div>
+  
 </div>
-

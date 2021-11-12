@@ -1,0 +1,8 @@
+.container-footer{
+    border: blue solid 1px;
+    background: red;
+    height: 50vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+}

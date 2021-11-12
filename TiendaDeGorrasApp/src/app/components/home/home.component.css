@@ -10,7 +10,7 @@
 }
 
 .fondo-home{
-    background-image: url(./../../../assets/fondo-home.jpg);
+    background-image: url(./../../../assets/img/fondo-home.jpg);
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
@@ -30,6 +30,7 @@
 
 .subtittle-home{
     color: white;
+    margin-bottom: 22px;
 }
 
 .button-home{
@@ -43,7 +44,18 @@
 .tienda{
     width: 87vw;
     height: auto;
-    border: red 1px solid;
+}
+
+.contenedor-tittle-tienda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.tittle-tienda{
+    font-size: 27px;
+    font-weight: bold;
 }
 
 .contenedor-cards{
@@ -52,7 +64,7 @@
 }
 
 .card-gorra{
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,9 +72,34 @@
 }
 
 .img-card{
-    border: 1px solid black;
-    height: 180px;
-    width: 180px;
+    height: 220px;
+    width: 290px;
+    margin-bottom: 50px;
+}
+
+.button-card{
+    width: 100%;
+    height: 40px;
+    border: black 1px solid;
+    background: white;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.name-card{
+    font-weight: bolder;
+}
+
+.contenedor-info-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+p{
+    margin: 0;
 }
 
 @media (max-width: 979px) {
@@ -82,3 +119,56 @@
         grid-template-columns: auto;
     }
 }
+
+.contenedor-vertodo{
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-instagram{
+    background: #FAFAFA;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram{
+    height: auto;
+    width: 87vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.contenedor-tittle-instagram{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 170px;
+    width: 100%;
+    
+}
+
+.cont-img-inst{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.cont-img-s{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.img-instagram{
+    height: 100%;
+    width: 100%;
+}
+

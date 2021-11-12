@@ -1,0 +1,182 @@
+[
+    {
+        "nombre": "Pink - RAW",
+        "tipo": "Vicera-oscura",
+        "precio": "$25",
+        "img":{
+            "lado":"assets/img/Gorras/1-rosa-lado.jpg",
+            "frente": "/assets/img/Gorras/1-rosa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Dark Green - RAW",
+        "tipo": "Vicera-oscura",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/1-turquesa-lado.jpg",
+            "frente": "/assets/img/Gorras/1-turquesa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Violet - RAW",
+        "tipo": "Vicera-oscura",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/1-violet-lado.jpg",
+            "frente": "/assets/img/Gorras/1-violet-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Brown - RAW",
+        "tipo": "Vicera-oscura",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/1-marron-lado.jpg",
+            "frente": "/assets/img/Gorras/1-marron-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Sun - RAW",
+        "tipo": "Motivo",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/2-bordo-turq-lado.jpg",
+            "frente": "/assets/img/Gorras/2-bordo-turq-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Palmera - RAW",
+        "tipo": "Motivo",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/2-gris-palmera-lado.jpg",
+            "frente": "/assets/img/Gorras/2-gris-palmera-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Black Rose - RAW",
+        "tipo": "Motivo",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/2-negro-rosa-lado.jpg",
+            "frente": "/assets/img/Gorras/2-negro-rosa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Flower - RAW",
+        "tipo": "Motivo",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/2-violet-blanco-lado.jpg",
+            "frente": "/assets/img/Gorras/2-violet-blanco-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Brown and Green - RAW",
+        "tipo": "Dos-colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/3-marron-verde-lado.jpg",
+            "frente": "/assets/img/Gorras/3-marron-verde-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Yellow Green - RAW",
+        "tipo": "Dos-colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/3-verde-amarillo-lado.jpg",
+            "frente": "/assets/img/Gorras/3-verde-amarillo-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Green and Violet - RAW",
+        "tipo": "Dos-colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/3-verde-violeta-lado.jpg",
+            "frente": "/assets/img/Gorras/3-verde-violeta-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Turc - RAW",
+        "tipo": "Dos-colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/3-violeta-turquesa-lado.jpg",
+            "frente": "/assets/img/Gorras/3-violeta-turquesa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Blue - RAW",
+        "tipo": "Un-color",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/4-azul-lado.jpg",
+            "frente": "/assets/img/Gorras/4-azul-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Grey - RAW",
+        "tipo": "Un-color",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/4-gris-lado.jpg",
+            "frente": "/assets/img/Gorras/4-gris-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Brown - RAW",
+        "tipo": "Un-color",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/4-marron-lado.jpg",
+            "frente": "/assets/img/Gorras/4-marron-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Black - RAW",
+        "tipo": "Un-color",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/5-negro-lado.jpg",
+            "frente": "/assets/img/Gorras/5-negro-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Brown 2 - RAW",
+        "tipo": "Dos colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/5-marron-lado.jpg",
+            "frente": "/assets/img/Gorras/5-marron-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Rose - RAW",
+        "tipo": "Dos colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/5-rosa-lado.jpg",
+            "frente": "/assets/img/Gorras/5-rosa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Turc - RAW",
+        "tipo": "Dos colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/5-turquesa-lado.jpg",
+            "frente": "/assets/img/Gorras/5-turquesa-frente.jpg"
+        }
+    },
+    {
+        "nombre": "Violet - RAW",
+        "tipo": "Dos colores",
+        "precio": "$25",
+        "img":{
+            "lado":"/assets/img/Gorras/5-violet-lado.jpg",
+            "frente": "/assets/img/Gorras/5-violet-frente.jpg"
+        }
+    }
+]
