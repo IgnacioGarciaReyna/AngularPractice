@@ -1,0 +1,20 @@
+<div class="contenedor">
+  <div class="tienda">
+    <div class="contenedor-tittle-tienda">
+      <p class="tittle-tienda">COLECCIÓN DE EDICIÓN LIMITADA</p>
+    </div>
+    <div class="contenedor-cards">
+      <div class="card-gorra" *ngFor="let gorra of gorrasList">
+        <img [src]="gorra.img.lado" appChangeImage [imageObject]="gorra.img" class="img-card" />
+        <div class="contenedor-info-card">
+          <p class="name-card">{{ gorra.nombre }}</p>
+          <p>{{ gorra.precio }}</p>
+        </div>
+        <button class="button-card">Agregar al Carrito</button>
+      </div>
+    </div>
+    <div class="contenedor-vertodo">
+      <button class="button-home">Ver todo</button>
+    </div>
+  </div>
+</div>

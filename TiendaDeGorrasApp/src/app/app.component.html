@@ -1,4 +1,7 @@
+<app-navbar (newItemEvent)="showSidebarApp($event)"></app-navbar>
+<ng-container *ngIf="showSidebar"> <app-sidebar (newItemEvent)="showSidebarApp($event)"></app-sidebar> </ng-container>
+
 <body>
-  <app-navbar></app-navbar>
-  <app-home> </app-home>
+  <router-outlet></router-outlet>
 </body>
+<app-footer></app-footer>

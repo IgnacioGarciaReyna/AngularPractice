@@ -98,30 +98,25 @@
     margin-bottom: 12px;
 }
 
+p{
+    margin: 0;
+}
 
-@media (max-width: 1170px) {
+@media (max-width: 979px) {
     .contenedor-cards{
         grid-template-columns: auto auto auto;
     }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 720px) {
     .contenedor-cards{
         grid-template-columns: auto auto;
     }
-
-    .tittle-home{
-        font-size: 40px;
-    }
 }
 
-@media (max-width: 570px) {
+@media (max-width: 483px) {
     .contenedor-cards{
         grid-template-columns: auto;
-    }
-
-    .tittle-home{
-        font-size: 30px;
     }
 }
 
