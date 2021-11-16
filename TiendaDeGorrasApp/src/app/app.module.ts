@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { appRouting } from './app.routes';
 import { ChangeImageDirective } from './directives/change-image.directive';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     FooterComponent,
     TiendaComponent,
     ChangeImageDirective,
-    SidebarComponent
+    SidebarComponent,
+    AboutUsComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

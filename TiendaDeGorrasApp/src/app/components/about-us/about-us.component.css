@@ -1,0 +1,42 @@
+.contenedor {
+  position: relative;
+  margin-top: 70px;
+  width: 98vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.cont-hijo {
+  height: 110vh;
+  width: 43.5vw;
+}
+
+.about-img {
+  height: 100%;
+  width: 100%;
+  /* El cover es = 141,216,216 */
+}
+
+.about-us-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background: #181818;
+  color: white;
+}
+
+.parrafo-about {
+  margin: 20px 50px;
+  height: 170px;
+  width: 420px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.aboutus-tittle {
+  margin: 40px;
+}

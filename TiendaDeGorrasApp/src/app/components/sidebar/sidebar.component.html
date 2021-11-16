@@ -19,11 +19,10 @@
       </svg>
     </div>
     <div class="menu-sidebar">
-      <a href="" class="link-sidebar">Inicio</a>
-      <a href="" class="link-sidebar">Tienda</a>
-      <a href="" class="link-sidebar">Nosotros</a>
-      <a href="" class="link-sidebar">Contacto</a>
-      <a href="" class="link-sidebar">Blog</a>
+      <a class="link-sidebar" (click)="goToRute(['home'])">Inicio</a>
+      <a class="link-sidebar" (click)="goToRute(['tienda'])">Tienda</a>
+      <a class="link-sidebar" (click)="goToRute(['aboutus'])">Nosotros</a>
+      <a class="link-sidebar" (click)="goToRute(['contacto'])">Contacto</a>
     </div>
     <div class="redes-sidebar">
       <img

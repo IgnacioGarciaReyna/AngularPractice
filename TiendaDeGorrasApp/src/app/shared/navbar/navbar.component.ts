@@ -1,4 +1,5 @@
 import { EventEmitter, Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<boolean>();
   public showSidebar: boolean = false;
 
-  constructor() {}
+  constructor(private _router : Router) {}
 
   ngOnInit(): void {}
 
@@ -17,5 +18,9 @@ export class NavbarComponent implements OnInit {
     this.showSidebar = !this.showSidebar;
     this.newItemEvent.emit(this.showSidebar);
     this.showSidebar = !this.showSidebar;
+  }
+
+  irARuta(ruta : string[]) : Promise<Boolean> {
+    return this._router.navigate(ruta);
   }
 }
