@@ -1,0 +1,288 @@
+<div [formGroup]="form">
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="control">
+        <label for="label">
+          <b
+            >1. Anteriormente, la institución ha compartido el pantel con otra
+            institución</b
+          >
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            value="true"
+            name="sharedInstitution"
+            formControlName="sharedInstitution"
+          />
+          Si
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            value="false"
+            name="sharedInstitution"
+            formControlName="sharedInstitution"
+          />
+          No
+        </label>
+      </div>
+
+      <div class="field" *ngIf="form.get('sharedInstitution')!.value == 'true'">
+        <label for="" class="label">Nombre de la institución:</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Ingrese el nombre de la institución"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="control">
+        <label for="label">
+          <b
+            >Su institución ha cambiado de nombre o ha tenido código del College
+            Board:</b
+          >
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            formControlName="instituteChangeName"
+            name="instituteChangeName"
+            value="true"
+          />
+          Si
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            formControlName="instituteChangeName"
+            name="instituteChangeName"
+            value="false"
+          />
+          No
+        </label>
+      </div>
+
+      <ng-container *ngIf="form.get('instituteChangeName')!.value == 'true'">
+        <div class="field">
+          <label for="" class="label">Nombre:</label>
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Ingrese el nombre de la institución"
+            />
+            <div class="field">
+              <label for="" class="label">Código:</label>
+              <div class="control">
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ingrese el código de la institución"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="control">
+        <label for="label">
+          <b>3. Tipo de institución</b>
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="private"
+          />
+          Privada
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="public"
+          />
+          Pública
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="casaProyect"
+          />
+          Proyecto C.A.S.A
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="youthInstitutions"
+          />
+          Institución juveniles
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="adults"
+          />
+          Adultos
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="institutionType"
+            formControlName="institutionType"
+            value="others"
+          />
+          Otro:
+        </label>
+      </div>
+
+      <ng-container *ngIf="form.get('institutionType')!.value == 'others'">
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Ingrese el tipo de institución"
+            />
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="control">
+        <label for="label">
+          <b>4. Enfoque de enseñanza:</b>
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="teachingApproach"
+            formControlName="teachingApproach"
+            value="traditional"
+          />
+          Tradicional
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="teachingApproach"
+            formControlName="teachingApproach"
+            value="vocational"
+          />
+          Vocacional
+        </label>
+        <label class="radio">
+          <input
+            type="radio"
+            name="teachingApproach"
+            formControlName="teachingApproach"
+            value="bilingual"
+          />
+          Bilingüe
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="teachingApproach"
+            formControlName="teachingApproach"
+            value="montessori"
+          />
+          Montessori
+        </label>
+        <label for="" class="radio">
+          <input
+            type="radio"
+            name="teachingApproach"
+            formControlName="teachingApproach"
+            value="others"
+          />
+          Otro:
+        </label>
+      </div>
+
+      <ng-container *ngIf="form.get('teachingApproach')!.value == 'others'">
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Ingrese el enfoque de la institución"
+            />
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div
+      class="column is-1"
+      *ngFor="let item of userFormGroupsGrades.controls; let i = index"
+    >
+      <div class="field">
+        <label for="" class="label">{{ gradeList[i] }}° </label>
+        <span>
+          <input class="input" type="text" placeholder="Número de alumnos" />
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="columns is-centered" formArrayName="exams">
+    <div
+      class="column is-1"
+      *ngFor="let item of userFormGroupsExams.controls; let i = index"
+    >
+      <div class="field">
+        <label for="" class="radio">{{ examsList[i] }} ° </label>
+        <span>
+          <input class="radio" type="checkbox" [formControlName]="i"/>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="columns is-centered">
+    <div
+      class="column is-1"
+      *ngFor="let item of userFormGroupsLenguajes.controls; let i = index"
+    >
+      <div class="field">
+        <label for="" class="radio">{{ lenguajesList[i] }} </label>
+        <span>
+          <input [value]="lenguajesList[i]" class="radio" type="radio" />
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="button is-success" (click)="ShowForm()">
+      Imprimir Formulario
+    </button>
+  </div>
+</div>

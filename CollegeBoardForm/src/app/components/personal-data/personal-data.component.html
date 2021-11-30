@@ -1,0 +1,189 @@
+<div [formGroup]="form">
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="field">
+        <label for="" class="label">Nombre de la institución:</label>
+        <div class="control">
+          <input
+            formControlName="institutionName"
+            class="input"
+            type="text"
+            placeholder="Ingrese el nombre de la institución"
+          />
+          <div
+            class="notification is-danger is-light tags"
+            *ngIf="IsValidField('institutionName')"
+          >
+            <div
+              class="tag is-danger"
+              *ngFor="let error of MessageError('institutionName')"
+            >
+              {{ error }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-10 is-half">
+      <div class="field">
+        <label for="" class="label">Dirección física:</label>
+        <div class="control">
+          <input
+            formControlName="adressDirection"
+            class="input"
+            type="text"
+            placeholder="Ingrese la dirección física"
+          />
+          <div
+            class="notification is-danger is-light tags"
+            *ngIf="IsValidField('adressDirection')"
+          >
+            <div
+              class="tag is-danger"
+              *ngFor="let error of MessageError('adressDirection')"
+            >
+              {{ error }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Región:</label>
+        <div class="control">
+          <input
+            formControlName="region"
+            class="input"
+            type="text"
+            placeholder="Ingrese la región"
+          />
+          <div
+            class="notification is-danger is-light tags"
+            *ngIf="IsValidField('region')"
+          >
+            <div
+              class="tag is-danger"
+              *ngFor="let error of MessageError('region')"
+            >
+              {{ error }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Distrito:</label>
+        <div class="control">
+          <input
+            formControlName="district"
+            class="input"
+            type="text"
+            placeholder="Ingrese el distrito"
+          />
+          <div
+          class="notification is-danger is-light tags"
+          *ngIf="IsValidField('district')"
+        >
+          <div
+            class="tag is-danger"
+            *ngFor="let error of MessageError('district')"
+          >
+            {{ error }}
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Teléfono:</label>
+        <div class="control">
+          <input
+            formControlName="phoneNumber"
+            class="input"
+            type="text"
+            placeholder="Ingrese el número teléfono"
+          />
+          <div
+          class="notification is-danger is-light tags"
+          *ngIf="IsValidField('phoneNumber')"
+        >
+          <div
+            class="tag is-danger"
+            *ngFor="let error of MessageError('phoneNumber')"
+          >
+            {{ error }}
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Número de Fax:</label>
+        <div class="control">
+          <input
+            formControlName="faxNumber"
+            class="input"
+            type="text"
+            placeholder="Ingrese el número de fax"
+          />
+          <div
+          class="notification is-danger is-light tags"
+          *ngIf="IsValidField('faxNumber')"
+        >
+          <div
+            class="tag is-danger"
+            *ngFor="let error of MessageError('faxNumber')"
+          >
+            {{ error }}
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns is-centered">
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Correo electrónico:</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Ingrese la dirección de correo electrónico"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="column is-5 is-half">
+      <div class="field">
+        <label for="" class="label">Página Web:</label>
+        <div class="control">
+          <input
+            class="input"
+            type="text"
+            placeholder="Ingrese su página web"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button class="button is-success" (click)="ShowForm()">
+      Imprimir Formulario
+    </button>
+  </div>
+</div>
