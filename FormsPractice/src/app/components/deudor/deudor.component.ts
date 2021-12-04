@@ -1,5 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
+import {
+  FormControl,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { InputsComponent } from 'src/app/shared/inputs/inputs.component';
 
 @Component({
   selector: 'app-deudor',
@@ -7,6 +20,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./deudor.component.css'],
 })
 export class DeudorComponent implements OnInit {
+  @ViewChild('sharedInputs') inputsComp!: InputsComponent;
+
   //Listas
   public passportList: string[] = ['CI', 'Pasaporte', 'RUN'];
   public sexList: string[] = ['Masculino', 'Femenino', 'No binario'];
@@ -41,33 +56,47 @@ export class DeudorComponent implements OnInit {
     'Ninguno',
   ];
 
+  //Arrays de validadores
+  private ValidatorString: Validators = [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.maxLength(50),
+    Validators.pattern(/^[a-zA-Z_ ]*$/),
+  ];
+
+  private ValidatorNumber: Validators = [
+    Validators.required,
+    Validators.minLength(4),
+    Validators.maxLength(30),
+    Validators.pattern(/^[a-zA-Z_ ]*$/),
+  ];
+
   //FormGroup y validadores
   public deudorForm: FormGroup = new FormGroup({
-    lastName: new FormControl(null, [Validators.required]),
-    firstName: new FormControl(null, [Validators.required]),
-    passportType: new FormControl(null, [Validators.required]),
-    passportNumber: new FormControl(null, [Validators.required]),
-    bornDate: new FormControl(null, [Validators.required]),
-    sexType: new FormControl(null, [Validators.required]),
     maritalState: new FormControl(null, [Validators.required]),
-    dwellingType: new FormControl(null, Validators.required),
-    department: new FormControl(null, [Validators.required]),
-    province: new FormControl(null, [Validators.required]),
-    municipality: new FormControl(null, [Validators.required]),
-    locality: new FormControl(null, [Validators.required]),
-    houseNumber: new FormControl(null, [Validators.required]),
+    dwellingType: new FormControl(null, [Validators.required]),
+    department: new FormControl(null, this.ValidatorString),
+    province: new FormControl(null, this.ValidatorString),
+    municipality: new FormControl(null, this.ValidatorString),
+    locality: new FormControl(null, this.ValidatorString),
+    houseStreet: new FormControl(null, this.ValidatorString),
+    houseNumber: new FormControl(null, this.ValidatorNumber),
     houseZone: new FormControl(null, [Validators.required]),
-    phoneNumber: new FormControl(null, [Validators.required]),
-    organizationType: new FormControl(null, [Validators.required]),
-    instructionDegree: new FormControl(null, [Validators.required]),
-    dependentsNumber: new FormControl(null, [Validators.required]),
+    phoneNumber: new FormControl(null, this.ValidatorNumber),
+    dependentsNumber: new FormControl(null, this.ValidatorNumber),
   });
 
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit(): void {}
 
   ShowDeudorForm() {
+    let sharedInputs = this.inputsComp.returnSharedInputs();
+    console.log(sharedInputs);
     console.log(this.deudorForm);
+  }
+
+  goToRoute(ruta: string[]): Promise<Boolean> {
+    return this._router.navigate(ruta);
   }
 }

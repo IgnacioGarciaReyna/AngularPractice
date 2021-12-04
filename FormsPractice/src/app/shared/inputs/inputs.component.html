@@ -1,0 +1,187 @@
+<form [formGroup]="deudorForm" class="row g-3 mt-3 pb-5">
+  <!-- APELLIDO -->
+  <div class="col-md-6">
+    <label for="lastName" class="form-label">Apellidos: *</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastName"
+      name="lastName"
+      formControlName="lastName"
+    />
+  </div>
+
+  <!-- NOMBRE -->
+  <div class="col-md-6">
+    <label for="firstName" class="form-label">Nombres: *</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      formControlName="firstName"
+    />
+  </div>
+
+  <!-- TIPO DE DOCUMENTO -->
+  <div class="col-md-3">
+    <label for="passportType" class="form-label">Tipo de documento: * </label>
+    <br />
+    <ng-container *ngFor="let item of passportList; let i = index">
+      <div class="form-check form-check-inline m-3">
+        <input
+          [value]="item"
+          name="passportType"
+          type="radio"
+          class="form-check-input"
+          [id]="item"
+          formControlName="passportType"
+        />
+        <label [for]="item" class="form-check-label">{{
+          item
+        }}</label>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- NÚMERO DE DOCUMENTO -->
+  <div class="col-md-3">
+    <label for="passportNumber" class="form-label"
+      >Número de documento: *</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="passportNumber"
+      name="passportNumber"
+      formControlName="passportNumber"
+    />
+  </div>
+
+  <!-- FECHA DE NACIMIENTO -->
+  <div class="col-md-2">
+    <label for="bornDate" class="form-label">Fecha de nacimiento: *</label>
+    <input
+      type="date"
+      class="form-control"
+      id="bornDate"
+      name="bornDate"
+      formControlName="bornDate"
+    />
+  </div>
+
+  <!-- SEXO -->
+  <div class="col-md-4">
+    <label for="sexType" class="form-label">Sexo: * </label>
+    <br />
+    <ng-container *ngFor="let item of sexList; let i = index">
+      <div class="form-check form-check-inline">
+        <input
+          [value]="item"
+          name="sexType"
+          type="radio"
+          class="form-check-input"
+          [id]="item"
+          formControlName="sexType"
+        />
+        <label [for]="item" class="form-check-label">{{
+          item
+        }}</label>
+      </div>
+    </ng-container>
+  </div>
+  <!-- TIPO DE ORGANIZACIÓN -->
+  <div class="col-md-6">
+    <label for="organizationType" class="form-label"
+      >Tipo de organización: *
+    </label>
+    <br />
+    <ng-container *ngFor="let item of organizationTypeList; let i = index">
+      <div class="form-check form-check-inline">
+        <input
+          [value]="item"
+          name="organizationType"
+          type="radio"
+          class="form-check-input"
+          [id]="item"
+          formControlName="organizationType"
+        />
+        <label [for]="item" class="form-check-label">{{
+          item
+        }}</label>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- OTRO TIPO DE ORGANIZACIÓN -->
+  <ng-container *ngIf="deudorForm.get('organizationType')!.value == 'Otros'">
+    <div class="col-md-6">
+      <label for="" class="form-label">Otro tipo de organización: *</label>
+      <input
+        type="text"
+        class="form-control"
+        id="otherorganizationType"
+        name="organizationType"
+        formControlName="organizationTypeOther"
+        placeholder="Ingrese el tipo de organización"
+      />
+    </div>
+  </ng-container>
+
+  <!-- NOMBRE Y DIRECCIÓN DE ORGANIZACIÓN -->
+  <ng-container
+    *ngIf="deudorForm.get('organizationType')!.value != 'Ninguno'"
+  >
+    <!-- NOMBRE DE LA ORGANIZACIÓN -->
+    <div class="col-md-3">
+      <label for="organizationName" class="form-label"
+        >Nombre de la organización: *</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="organizationName"
+        name="organizationName"
+        formControlName="organizationName"
+      />
+    </div>
+
+    <!-- DIRECCIÓN DE LA ORGANIZACIÓN -->
+    <div class="col-md-3">
+      <label for="organizationAdress" class="form-label"
+        >Dirección de la organización: *</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="organizationAdress"
+        name="organizationAdress"
+        formControlName="organizationAdress"
+      />
+    </div>
+  </ng-container>
+
+  <!-- GRADO DE INSTRUCCIÓN -->
+  <div class="col-md-6">
+    <label for="instructionDegree" class="form-label"
+      >Grado de instrucción: *
+    </label>
+    <br />
+    <ng-container *ngFor="let item of instructionDegreeList; let i = index">
+      <div class="form-check form-check-inline">
+        <input
+          [value]="item"
+          name="instructionDegree"
+          type="radio"
+          class="form-check-input"
+          [id]="item"
+          formControlName="instructionDegree"
+        />
+        <label [for]="item" class="form-check-label">{{
+          item
+        }}</label>
+      </div>
+    </ng-container>
+  </div>
+  
+</form>
