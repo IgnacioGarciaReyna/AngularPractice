@@ -5,6 +5,9 @@ import { InputsComponent } from 'src/app/shared/inputs/inputs.component';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { DeudorFirebaseService } from 'src/app/services/deudor-firebase.service';
+import { ICodeudor } from 'src/app/interfaces/codeudor.interface';
+import { CodeudorFirebaseService } from 'src/app/services/codeudor-firebase.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-codeudor',
@@ -59,7 +62,7 @@ export class CodeudorComponent implements OnInit, OnDestroy {
 
   constructor(
     private _router: Router,
-    private _deudorFirebase: DeudorFirebaseService
+    private _codeudorFirebase: CodeudorFirebaseService
   ) {}
 
   ngOnInit(): void {
@@ -82,14 +85,29 @@ export class CodeudorComponent implements OnInit, OnDestroy {
     );
   }
 
-  ShowDeudorForm() {
-    let sharedInputs = this.inputsComp.returnSharedInputs();
-    console.log(sharedInputs);
-    console.log(this.deudorForm);
-    this._deudorFirebase.saveData();
+  async ShowDeudorForm(): Promise<void> {
+    let sharedInputs = this.inputsComp.returnSharedInputs;
+    let codeudor: ICodeudor = {
+      ...sharedInputs.value,
+      ...this.deudorForm.value,
+    };
+    if (!(await this._codeudorFirebase.saveData(codeudor))) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Hubo un error al guardar, intente de nuevo',
+      });
+      return;
+    }
+    Swal.fire({
+      icon: 'success',
+      text: 'Registro guardado correctamente',
+    });
+
+    sharedInputs.reset();
+    this.deudorForm.reset();
   }
 
-  goToRoute(ruta: string[]) {
+  goToRoute(ruta: string[]): Promise<boolean> {
     return this._router.navigate(ruta);
   }
 

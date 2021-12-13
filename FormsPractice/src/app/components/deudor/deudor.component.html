@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- SHARED -->
   <app-inputs #sharedInputs></app-inputs>
 
@@ -193,9 +193,16 @@
           id=""
           class="btn btn-primary btn-lg btn-block"
           (click)="ShowDeudorForm()"
+          *ngIf="!savingInformation"
         >
           Enviar
         </button>
+        <div *ngIf="savingInformation">
+          <span>Guardando información</span>
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </div>
     </div>
   </form>

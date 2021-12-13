@@ -74,12 +74,12 @@ export class InputsComponent implements OnInit {
     passportType: new FormControl(null, [Validators.required]),
     passportNumber: new FormControl(null, this.ValidatorNumber),
     bornDate: new FormControl(null, [Validators.required]),
-    sexType: new FormControl(null, [Validators.required]),
+    gender: new FormControl(null, [Validators.required]),
     organizationType: new FormControl("Ninguno", [Validators.required]),
     instructionDegree: new FormControl(null, [Validators.required]),
   });
 
-  returnSharedInputs() {
+   get returnSharedInputs(): FormGroup {
     return this.deudorForm;
   }
 

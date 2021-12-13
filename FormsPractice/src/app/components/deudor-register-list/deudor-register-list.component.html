@@ -1,0 +1,46 @@
+<br />
+<div class="row">
+  <div class="col-12">
+    <hr />
+    <h1>Lista de deudores</h1>
+    <div class="form-group">
+      <label for="">Buscar por nombre:</label>
+      <input
+        type="text"
+        [formControl]="searchByName"
+        name=""
+        id=""
+        class="form-control"
+        placeholder="Ingrese el nombre del deudor"
+      />
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Phone Number</th>
+          <th scope="col">Created Date</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let debtor of deudorList; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ debtor.fullName }}</td>
+          <td>{{ debtor.phoneNumber }}</td>
+          <td>{{ debtor.dateCreated | date: "medium" }}</td>
+          <td>
+            <button (click)="editarUsuario(debtor.id)" class="btn btn-outline-warning m-2">Editar</button>
+            <!-- <button (click)="eliminarUsuario()" class="btn btn-outline-danger m-2">Eliminar</button> -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

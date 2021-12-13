@@ -1,4 +1,8 @@
 import {
+  AfterContentInit,
+  AfterViewChecked,
+  AfterViewInit,
+  ChangeDetectorRef,
   Component,
   OnInit,
   QueryList,
@@ -12,14 +16,17 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IDeudor } from 'src/app/interfaces/deudor.interface';
+import { DeudorFirebaseService } from 'src/app/services/deudor-firebase.service';
 import { InputsComponent } from 'src/app/shared/inputs/inputs.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-deudor',
   templateUrl: './deudor.component.html',
   styleUrls: ['./deudor.component.css'],
 })
-export class DeudorComponent implements OnInit {
+export class DeudorComponent implements OnInit, AfterViewChecked {
   @ViewChild('sharedInputs') inputsComp!: InputsComponent;
 
   //Listas
@@ -86,14 +93,48 @@ export class DeudorComponent implements OnInit {
     dependentsNumber: new FormControl(null, this.ValidatorNumber),
   });
 
-  constructor(private _router: Router) {}
+  public savingInformation: boolean = false;
+
+  constructor(
+    private _router: Router,
+    private _deudorFirebase: DeudorFirebaseService,
+    private readonly _changeDetectroRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {}
 
-  ShowDeudorForm() {
-    let sharedInputs = this.inputsComp.returnSharedInputs();
-    console.log(sharedInputs);
-    console.log(this.deudorForm);
+  ngAfterViewChecked(): void {
+    //se usa after view porque el hijo se inicia con un ViewChild, si lo hacemos en un OnInit el hijo todavía no se inició
+    if (localStorage.getItem('ModificationUser') !== null) {
+      this.deudorForm.patchValue(
+        JSON.parse(localStorage.getItem('ModificationUser')!)
+      );
+      this.inputsComp.returnSharedInputs.patchValue(
+        JSON.parse(localStorage.getItem('ModificationUser')!)
+      )
+      this._changeDetectroRef.detectChanges();
+    }
+  }
+
+  async ShowDeudorForm(): Promise<void> {
+    this.savingInformation = true;
+    let sharedInputs = this.inputsComp.returnSharedInputs;
+    let deudor: IDeudor = { ...sharedInputs.value, ...this.deudorForm.value };
+    if (!(await this._deudorFirebase.saveData(deudor))) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Hubo un error al guardar, intente de nuevo',
+      });
+      return;
+    }
+    Swal.fire({
+      icon: 'success',
+      text: 'Registro guardado correctamente',
+    });
+
+    sharedInputs.reset();
+    this.deudorForm.reset();
+    this.savingInformation = false;
   }
 
   goToRoute(ruta: string[]): Promise<Boolean> {

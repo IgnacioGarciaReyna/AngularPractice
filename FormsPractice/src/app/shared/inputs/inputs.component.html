@@ -72,17 +72,17 @@
 
   <!-- SEXO -->
   <div class="col-md-4">
-    <label for="sexType" class="form-label">Sexo: * </label>
+    <label for="gender" class="form-label">Sexo: * </label>
     <br />
     <ng-container *ngFor="let item of sexList; let i = index">
       <div class="form-check form-check-inline">
         <input
           [value]="item"
-          name="sexType"
+          name="gender"
           type="radio"
           class="form-check-input"
           [id]="item"
-          formControlName="sexType"
+          formControlName="gender"
         />
         <label [for]="item" class="form-check-label">{{
           item
