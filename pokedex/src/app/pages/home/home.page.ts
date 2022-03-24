@@ -1,6 +1,7 @@
 import {
   AfterViewInit,
   Component,
+  ComponentFactoryResolver,
   ElementRef,
   OnInit,
   ViewChild,
@@ -74,6 +75,7 @@ export class HomePage implements OnInit {
   }
 
   loadData(event) {
+    console.log(event);
     this.page++;
 
     this._pokemonService.getPokemons(this.page).subscribe({
